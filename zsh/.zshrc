@@ -13,6 +13,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 cd ~
 
 alias ls="ls --color=auto"
-alias vim="lvim"
-alias vi="lvim"
+alias vim="nvim"
+alias vi="nvim"
 export PATH="/home/edward/.local/bin:$PATH"
