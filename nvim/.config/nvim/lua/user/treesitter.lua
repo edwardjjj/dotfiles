@@ -17,6 +17,7 @@ configs.setup {
     "rust",
     "java",
     "yaml",
+    "markdown",
   },
   ignore_install = { "haskell" },
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
