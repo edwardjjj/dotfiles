@@ -13,7 +13,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 cd ~
 
 alias ls="ls --color=auto"
-alias vim="nvim"
-alias vi="nvim"
+alias vim="lvim"
+alias vi="lvim"
 export PATH="/home/edward/.local/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
