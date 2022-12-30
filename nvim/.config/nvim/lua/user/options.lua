@@ -6,8 +6,8 @@ local options = {
     completeopt = { "menuone", "noselect" },
     conceallevel = 0, -- so that `` is visible in markdown files
     fileencoding = "utf-8", -- the encoding written to a file
-    foldmethod = "manual", -- folding, set to "expr" for treesitter based folding
-    foldexpr = "", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+    foldmethod = "indent", -- folding, set to "expr" for treesitter based folding
+    foldexpr = "nvim_treesitter#foldexpr()", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
     guifont = "monospace:h17", -- the font used in graphical neovim applications
     hidden = true, -- required to keep multiple buffers and open multiple buffers
     hlsearch = true, -- highlight all matches on previous search pattern
@@ -46,3 +46,4 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
+-- let g:markdown_folding = 1
