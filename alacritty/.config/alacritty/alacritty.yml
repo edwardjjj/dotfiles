@@ -113,8 +113,8 @@ window:
 font:
   # Normal (roman) font face
   normal:
-    family: Hack Nerd Font
-  size: 16
+    family: JetBrainsMono Nerd Font
+  size: 12
     # Font family
     #
     # Default:
