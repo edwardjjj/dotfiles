@@ -12,8 +12,21 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 cd ~
 
-alias ls="ls --color=auto"
-alias vim="lvim"
-alias vi="lvim"
 export PATH="/home/edward/.local/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+
+####################################
+#             Alias                #
+####################################
+alias ls="ls --color=auto"
+alias ll="ls -la --color=auto"
+alias vim="lvim"
+alias vi="lvim"
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new -t"
+
+
+
