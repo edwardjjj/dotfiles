@@ -10,23 +10,28 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
-cd ~
+
 
 export PATH="/home/edward/.local/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
 
 ####################################
 #             Alias                #
 ####################################
 alias ls="ls --color=auto"
 alias ll="ls -la --color=auto"
-alias vim="lvim"
-alias vi="lvim"
+alias vim="nvim"
+alias vi="nvim"
 alias t="tmux"
 alias ta="t a -t"
 alias tls="t ls"
 alias tn="t new -t"
+alias py="python3"
+alias c="clear"
+
 
 
 
