@@ -1,4 +1,5 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
+local cmp = require "cmp"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -25,7 +26,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -42,6 +43,34 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+  {
+    "hrsh7th/nvim-cmp",
+    opts = {
+      sources = {
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "nvim_lua" },
+        { name = "path" },
+        { name = "crates" },
+      },
+      -- mapping = {
+      --   ["<Tab>"] = cmp.mapping(function(fallback)
+      --     if cmp.visible() then
+      --       local entry = cmp.get_selected_entry()
+      --       if not entry then
+      --         cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
+      --       else
+      --         cmp.confirm()
+      --       end
+      --     else
+      --       fallback()
+      --     end
+      --   end, { "i", "s", "c" }),
+      -- },
+    },
+  },
+
   -- Install a plugin
   {
     "max397574/better-escape.nvim",
@@ -54,7 +83,81 @@ local plugins = {
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
-  }
+  },
+
+  {
+    "mfussenegger/nvim-dap",
+    config = function(_, opts)
+      require("core.utils").load_mappings "dap"
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
+    config = function(_, opts)
+      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
+      require("core.utils").load_mappings "dap_python"
+    end,
+  },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function()
+      local dap = require "dap"
+      local dapui = require "dapui"
+      dapui.setup()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui.config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui.config"] = function()
+        dapui.close()
+      end
+    end,
+  },
+
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function()
+      vim.g.rustfmt_autosave = 1
+    end,
+  },
+
+  {
+    "simrat39/rust-tools.nvim",
+    ft = "rust",
+    dependencies = "neovim/nvim-lspconfig",
+    opts = function()
+      return require "custom.configs.rust-tools"
+    end,
+    config = function(_, opts)
+      require("rust-tools").setup(opts)
+    end,
+  },
+
+  {
+    "saecki/crates.nvim",
+    ft = { "rust", "toml" },
+    requires = { { "nvim-lua/plenary.nvim" } },
+    config = function()
+      require("crates").setup()
+    end,
+  },
+
+  {
+    "ThePrimeagen/vim-be-good",
+    lazy = false,
+  },
 
   -- To make a plugin not be loaded
   -- {

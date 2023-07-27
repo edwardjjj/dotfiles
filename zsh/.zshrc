@@ -14,7 +14,7 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
 export PATH="/home/edward/.local/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
+export PATH="$HOME/.pyenv/bin:$PATH"
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
 

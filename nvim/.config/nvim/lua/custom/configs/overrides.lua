@@ -12,6 +12,8 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "python",
+    "rust",
   },
   indent = {
     enable = true,
@@ -37,6 +39,14 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+    -- python
+    "pyright",
+    "flake8",
+    "black",
+    "debugpy",
+
+    -- rust
+    "rust-analyzer",
   },
 }
 
@@ -54,6 +64,17 @@ M.nvimtree = {
       },
     },
   },
+}
+
+M.cmp = {
+  sources = {
+    { name = "luasnip" },
+    { name = "nvim_lsp" },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
+    { name = "crates" },
+  }
 }
 
 return M
