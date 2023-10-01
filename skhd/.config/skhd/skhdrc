@@ -1,0 +1,12 @@
+
+# open terminal
+cmd - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
+
+# open mpv
+cmd - m : open -na /Applications/mpv.app $(pbpaste)
+
+# open browser
+cmd - w : open -n -a "Google Chrome"
+
+# close window
+cmd + shift - q : yabai -m window --close
