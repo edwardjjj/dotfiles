@@ -12,6 +12,8 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 
 
+export XDG_MENU_PREFIX="lxde-"
+export XDG_CURRENT_DESKTOP="LXDE"
 export PATH="/home/edward/.local/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
@@ -31,6 +33,7 @@ alias tls="t ls"
 alias tn="t new -t"
 alias py="python3"
 alias c="clear"
+alias lg="lazygit"
 
 
 
