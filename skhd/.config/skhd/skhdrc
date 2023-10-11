@@ -1,12 +1,43 @@
 
 # open terminal
-cmd - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
+cmd - return : open -na kitty.app
 
 # open mpv
 cmd - m : open -na /Applications/mpv.app $(pbpaste)
 
 # open browser
-cmd - w : open -n -a "Google Chrome"
+cmd - w : open -na "Google Chrome"
 
 # close window
 cmd + shift - q : yabai -m window --close
+# moves focus between spaces 
+cmd - 1 : yabai -m space --focus 1 
+cmd - 2 : yabai -m space --focus 2 
+cmd - 3 : yabai -m space --focus 3
+cmd - 4 : yabai -m space --focus 4
+cmd - 5 : yabai -m space --focus 5
+cmd - 6 : yabai -m space --focus 6
+cmd - 7 : yabai -m space --focus 7
+cmd - 8 : yabai -m space --focus 8
+cmd - 9 : yabai -m space --focus 9
+cmd - 0 : yabai -m space --focus 10
+
+# moves winodw to space and change focus
+shift + cmd - 1: yabai -m window --space 1 --focus 
+shift + cmd - 2: yabai -m window --space 2 --focus 
+shift + cmd - 3: yabai -m window --space 3 --focus 
+shift + cmd - 4: yabai -m window --space 4 --focus 
+shift + cmd - 5: yabai -m window --space 5 --focus 
+shift + cmd - 6: yabai -m window --space 6 --focus 
+shift + cmd - 7: yabai -m window --space 7 --focus 
+shift + cmd - 8: yabai -m window --space 8 --focus 
+shift + cmd - 9: yabai -m window --space 9 --focus 
+shift + cmd - 0: yabai -m window --space 10 --focus 
+
+# moves focus between windows in the current focused display
+ctrl + cmd - h : yabai -m window --focus west
+ctrl + cmd - j : yabai -m window --focus south
+ctrl + cmd - k : yabai -m window --focus north
+ctrl + cmd - l : yabai -m window --focus east
+
+cmd - z : yabai -m window --toggle zoom-fullscreen

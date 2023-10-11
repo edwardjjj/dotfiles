@@ -12,10 +12,6 @@ source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 
 
-export XDG_MENU_PREFIX="lxde-"
-export XDG_CURRENT_DESKTOP="LXDE"
-export PATH="/home/edward/.local/bin:$PATH"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
@@ -38,3 +34,7 @@ alias lg="lazygit"
 
 
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
