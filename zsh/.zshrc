@@ -12,12 +12,12 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 
 
-export XDG_MENU_PREFIX="lxde-"
-export XDG_CURRENT_DESKTOP="LXDE"
+export PATH=$PATH:/usr/local/go/bin
 export PATH="/home/edward/.local/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 fpath+=~/.zfunc
+fpath+=~/.conda-zsh-completion/
 autoload -Uz compinit && compinit
 
 ####################################
@@ -38,3 +38,21 @@ alias lg="lazygit"
 
 
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/edward/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/edward/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/edward/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/edward/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
