@@ -1,0 +1,35 @@
+* {
+  border-radius: 5px;
+  border-color: rgba(68, 71, 90, 1);
+ }
+window {
+  font-size: 32px;
+  font-family: "JetBrains Mono Nerd Font";
+  background-color: rgba(40, 42, 54, 0.7);
+  color: white;
+}
+
+#entry{
+  padding: 0.25em;
+  border: none;
+}
+
+#entry:selected {
+  background-color: rgba(189, 147, 249, 0.8);
+  outline: none;
+}
+
+#input{
+  padding: 0.25em;
+}
+
+#text:selected{
+  background-color: rgba(189, 147, 249, 0);
+}
+
+#scroll {
+  margin: -2px 0px;
+}
+
+
+

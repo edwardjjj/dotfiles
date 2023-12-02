@@ -1,0 +1,26 @@
+profile home{
+    output "Goldstar Company Ltd LG ULTRAGEAR+ 307NTHM8L601" mode 3840x2160@119.999Hz position 1504,0 scale 1.5
+    output eDP-1 mode 2256x1504@59.999Hz position 0,0 scale 1.5
+    exec swaymsg workspace 1 output DP-3
+    exec swaymsg workspace 2 output DP-3
+    exec swaymsg workspace 3 output DP-3
+    exec swaymsg workspace 4 output DP-3
+    exec swaymsg workspace 5 output DP-3
+    exec swaymsg workspace 6 output DP-3
+    exec swaymsg workspace 7 output eDP-1
+    exec swaymsg workspace 8 output eDP-1
+  }
+
+
+profile lab {
+    output "Eizo Nanao Corporation EV2760 60704100" mode 2560x1440 position 1504,0 scale 1.25
+    output eDP-1 mode 2256x1504@59.999Hz position 0,0 scale 1.5
+    exec swaymsg workspace 1 output "Eizo Nanao Corporation EV2760 60704100"
+    exec swaymsg workspace 2 output "Eizo Nanao Corporation EV2760 60704100"
+    exec swaymsg workspace 3 output "Eizo Nanao Corporation EV2760 60704100"
+    exec swaymsg workspace 4 output "Eizo Nanao Corporation EV2760 60704100"
+    exec swaymsg workspace 5 output "Eizo Nanao Corporation EV2760 60704100"
+    exec swaymsg workspace 6 output "Eizo Nanao Corporation EV2760 60704100"
+    exec swaymsg workspace 7 output eDP-1
+    exec swaymsg workspace 8 output eDP-1
+  }
