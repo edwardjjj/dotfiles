@@ -1,6 +1,6 @@
 
 # open terminal
-cmd - return : open -na kitty.app
+cmd - return : open -na alacritty.app
 
 # open mpv
 cmd - m : open -na /Applications/mpv.app $(pbpaste)
