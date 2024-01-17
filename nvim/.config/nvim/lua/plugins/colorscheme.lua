@@ -4,7 +4,7 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = {
-      flavour = "macchiato",
+      flavor = "macchiato",
       integrations = {
         alpha = true,
         cmp = true,
