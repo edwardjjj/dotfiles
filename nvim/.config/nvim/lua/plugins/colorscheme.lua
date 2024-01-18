@@ -5,7 +5,7 @@ return {
     name = "catppuccin",
     config = function()
       require("catppuccin").setup({
-        flavour = "mocha",
+        flavour = "macchiato",
         term_color = false,
       })
     end,
@@ -51,7 +51,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-moon",
+      colorscheme = "catppuccin",
     },
   },
 }
