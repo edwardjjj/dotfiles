@@ -30,6 +30,9 @@ alias tn="t new -t"
 alias py="python3"
 alias c="clear"
 alias lg="lazygit"
+alias cd="z"
+
+eval "$(zoxide init zsh)"
 
 
 
@@ -54,3 +57,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
