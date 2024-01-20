@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# start a tmux session in the current directory
+
+dirname="$(basename $PWD)"
+
+# tmux sessionname cannot contain a dot, replace with underscore
+session="${dirname/./_}"
+
+tmux_sessions=$(tmux ls -F '#{session_name}')
+
+if [ -n "$TMUX" ]; then
+  # already in tmux
+  if [[ $tmux_sessions != *"$session"* ]]; then
+      # force create session, don't attach
+      TMUX='' tmux new-session -Ad -s "$session"
+  fi
+  tmux switch-client -t "$session"
+else
+  # not in tmux 
+  # create session, or attach when exists
+  tmux new-session -As "$session"
+fi
