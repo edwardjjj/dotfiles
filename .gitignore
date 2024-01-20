@@ -1,3 +1,4 @@
 nvim/.config/nvim/plugin
 nvim/.config/systemd/
 nvim/.config/lazygit/
+nvim/.config/nvim/lazy-lock.json
